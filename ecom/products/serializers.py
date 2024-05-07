@@ -28,7 +28,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         sizes_data = validated_data.pop('sizes')
-        tags_data = validated_data.pop('tags', [])  # Get tags data if provided, or set to empty list
+        tags_data = validated_data.pop('tags', [])
         product = Product.objects.create(**validated_data)
         for size_data in sizes_data:
             ProductSize.objects.create(product=product, **size_data)
