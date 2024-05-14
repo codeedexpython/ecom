@@ -6,7 +6,7 @@ from .views import ProductViewSet, ProductSizeViewSet
 router = DefaultRouter()
 
 router.register("products", ProductViewSet, basename='product')
-router.register("product-sizes", ProductSizeViewSet, basename='productsize')
+router.register("product/sizes", ProductSizeViewSet, basename='productsize')
 
 urlpatterns = [
     path('', include(router.urls)),
