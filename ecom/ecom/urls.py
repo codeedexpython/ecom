@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ecom/', include('products.urls')),
     path('customer/', include('customers.urls')),
+    path('razorpay/',include('razorpay_backend.urls')),
 ]

@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nbw+@03_p(48y$)&7t32!gu)*drl_ap6)=8oa@wz@8oi9&o+jg'
-
+SECRET_KEY =os.getenv("SECRET_KEY")
+#SECRET_KEY = 'django-insecure-nbw+@03_p(48y$)&7t32!gu)*drl_ap6)=8oa@wz@8oi9&o+jg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'products',
     'customers',
+    'razorpay_backend',
     'rest_framework',
 ]
 
@@ -124,3 +128,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#razorpay
+KEY= os.getenv("KEY")
+SECRET_KEY= os.getenv("SECRET_KEY")
