@@ -1,11 +1,9 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.generics import CreateAPIView,RetrieveAPIView
 from rest_framework import status
 from .models import Transaction
 from order_app.models import Order
-from customers.models import CustomerModel
 from .serializers import CreateOrderSerializers, TranscationSerializer
 from razorpay_backend.razorpay_conf.main import  RazorpayClient
 
