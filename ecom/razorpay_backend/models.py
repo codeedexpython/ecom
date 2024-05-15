@@ -1,5 +1,4 @@
 from django.db import models
-from customers.models import CustomerProfileModel
 from order_app.models import Order
 
 class Transaction(models.Model):
