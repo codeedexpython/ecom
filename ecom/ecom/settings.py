@@ -131,5 +131,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #razorpay
-KEY= os.getenv("KEY")
-SECRET_KEY= os.getenv("SECRET_KEY")
+KEY= "rzp_test_xaN3Y66H6Fcsgt"
+SECRET_KEY= "K2g4oAvYynh01NGRy71YkWrm"

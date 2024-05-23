@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Category, Vendor, Tag, Product, ProductSize, ProductImage,ProductID
+from customers.serializers import CustomerProfileSerializer
+from .models import *
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -60,4 +61,11 @@ class ProductSerializer(serializers.ModelSerializer):
         if instance.delivery == 'selected_countries':
             representation['selected_countries'] = instance.selected_countries.split(',')
         return representation
-    
+
+
+
+class RefundOrderSerializer(serializers.ModelSerializer):
+    customer = serializers.PrimaryKeyRelatedField(read_only=True)
+    class Meta:
+        model = RefundOrder
+        fields = ['order', 'customer', 'product', 'quantity']

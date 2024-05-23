@@ -1,4 +1,5 @@
 from django.db import models
+from customers.models import CustomerProfileModel
 
 class Category(models.Model):
     name = models.CharField(max_length=250)
@@ -67,3 +68,8 @@ class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_images')
     image = models.CharField(max_length=250)
 
+class RefundOrder(models.Model):
+    order= models.IntegerField()
+    customer= models.ForeignKey(CustomerProfileModel,on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,on_delete=models.CASCADE,related_name='refund_product')
+    quantity = models.IntegerField()

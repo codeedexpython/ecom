@@ -13,7 +13,7 @@ class Transaction(models.Model):
     signature = models.CharField(max_length=100,verbose_name="Signature")
     amount = models.IntegerField(verbose_name="Amount")
     datetime = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(choices=STATUS_CHOICES,default='PENDING')
+    status = models.CharField(choices=STATUS_CHOICES,default='PENDING',max_length=100)
 
     def __str__(self):
         return str(self.payment_id)
