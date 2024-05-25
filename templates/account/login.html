@@ -1,0 +1,13 @@
+<!-- templates/account/login.html -->
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login with Google</h2>
+    <a href="{% provider_login_url 'google' %}">Sign up with Google</a>
+</body>
+</html>
